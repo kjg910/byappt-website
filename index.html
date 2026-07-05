@@ -89,6 +89,69 @@
     width: clamp(320px, 36vw, 520px);
     height: auto;
   }
+
+  /* ---------- Roll-up door + caution tape ---------- */
+  .door-wrap{
+    position: relative;
+    width: clamp(300px, 34vw, 460px);
+    aspect-ratio: 1 / 0.86;
+  }
+  .door-graphic{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 4px 4px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.06), transparent 8%),
+      repeating-linear-gradient(180deg, #4d4d4d 0px, #4d4d4d 3px, #363636 3px, #363636 6px, #262626 6px, #262626 38px);
+    box-shadow:
+      inset 0 0 0 6px #1a1a1a,
+      inset 0 3px 6px rgba(255,255,255,0.08),
+      inset 0 -12px 22px rgba(0,0,0,0.35),
+      0 16px 30px rgba(0,0,0,0.25);
+    overflow: hidden;
+  }
+  .door-graphic::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, transparent 4%, transparent 96%, rgba(0,0,0,0.4) 100%);
+  }
+  .door-handle{
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    width: 22%;
+    height: 8px;
+    background: linear-gradient(180deg, #d8d8d8, #8a8a8a);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  }
+  .tape-band{
+    position: absolute;
+    left: -10%;
+    width: 120%;
+    height: 15%;
+    min-height: 38px;
+    background: repeating-linear-gradient(135deg, #f5c518 0 22px, #111114 22px 44px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.35), inset 0 0 0 2px rgba(0,0,0,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .tape-band.tape-1{ top: 28%; transform: rotate(-7deg); }
+  .tape-band.tape-2{ top: 58%; transform: rotate(7deg); }
+  .tape-band span{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(18px, 2.4vw, 28px);
+    letter-spacing: 3px;
+    color: #111;
+    background: rgba(245,197,24,0.95);
+    padding: 4px 22px;
+    white-space: nowrap;
+  }
   .subline{
     font-size: 15px;
     letter-spacing: 4px;
@@ -233,6 +296,8 @@
     header{ padding: 20px 24px; flex-wrap: wrap; gap: 12px; }
     .hero-left, .hero-right{ padding: 44px 26px; }
     .brand-logo{ width: clamp(220px, 62vw, 340px); }
+    .door-wrap{ width: clamp(220px, 62vw, 340px); }
+    .tape-band span{ font-size: 16px; padding: 3px 14px; letter-spacing: 2px; }
     form.signup{ flex-direction: column; }
   }
 
@@ -274,7 +339,15 @@
 <div class="hero">
   <div class="hero-left">
     <div class="eyebrow">Private Training Space</div>
-    <h1 class="brand"><img src="tape-logo.png" alt="By Appointment" class="brand-logo"></h1>
+    <h1 class="brand">
+      <div class="door-wrap" role="img" aria-label="By Appointment — roll-up training bay door, closed for now with caution tape across it">
+        <div class="door-graphic">
+          <div class="door-handle"></div>
+        </div>
+        <div class="tape-band tape-1"><span>BY APPT</span></div>
+        <div class="tape-band tape-2"></div>
+      </div>
+    </h1>
     <span class="subline">— Private Training Space —</span>
 
     <div class="status-line">
