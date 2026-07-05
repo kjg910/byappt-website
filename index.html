@@ -42,14 +42,9 @@
     z-index: 3;
   }
   .wordmark{
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .wordmark img{
-    height: 46px;
-    width: auto;
-    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
   }
   .loc-chip{
     font-size: 12px;
@@ -86,10 +81,13 @@
     margin: 0 0 18px;
   }
   h1.brand{
-    font-size: clamp(64px, 9vw, 110px);
-    line-height: 0.92;
-    margin: 0 0 6px;
-    letter-spacing: 0.5px;
+    margin: 0 0 10px;
+    line-height: 0;
+  }
+  .brand-logo{
+    display: block;
+    width: clamp(320px, 36vw, 520px);
+    height: auto;
   }
   .subline{
     font-size: 15px;
@@ -234,7 +232,7 @@
   @media (max-width: 520px){
     header{ padding: 20px 24px; flex-wrap: wrap; gap: 12px; }
     .hero-left, .hero-right{ padding: 44px 26px; }
-    .wordmark img{ height: 34px; }
+    .brand-logo{ width: clamp(220px, 62vw, 340px); }
     form.signup{ flex-direction: column; }
   }
 
@@ -269,16 +267,14 @@
 <body>
 
 <header>
-  <div class="wordmark">
-    <img src="tape-logo.png" alt="By Appointment">
-  </div>
+  <div class="wordmark">BY APPOINTMENT</div>
   <div class="loc-chip">Whittier, CA</div>
 </header>
 
 <div class="hero">
   <div class="hero-left">
     <div class="eyebrow">Private Training Space</div>
-    <h1 class="brand">BY<br>APPOINTMENT</h1>
+    <h1 class="brand"><img src="tape-logo.png" alt="By Appointment" class="brand-logo"></h1>
     <span class="subline">— Private Training Space —</span>
 
     <div class="status-line">
