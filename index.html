@@ -17,13 +17,14 @@
     --line: rgba(17,17,17,0.14);
   }
   *{ box-sizing: border-box; }
-  html,body{ margin:0; padding:0; }
+  html,body{ margin:0; padding:0; max-width: 100%; overflow-x: hidden; }
   body{
     background: var(--warm-white);
     color: var(--iron);
     font-family: 'Oswald', Arial, sans-serif;
     min-height: 100vh;
   }
+  img{ max-width: 100%; height: auto; display: block; }
   h1,h2,.headline-font{
     font-family: 'Bebas Neue', 'Oswald', Arial, sans-serif;
     font-weight: 400;
@@ -71,6 +72,7 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
+    min-width: 0;
   }
   .eyebrow{
     font-size: 12px;
@@ -83,10 +85,12 @@
   h1.brand{
     margin: 0 0 10px;
     line-height: 0;
+    max-width: 100%;
   }
   .brand-logo{
     display: block;
-    width: clamp(320px, 36vw, 520px);
+    width: clamp(200px, 36vw, 520px);
+    max-width: 100%;
     height: auto;
   }
   .subline{
@@ -151,6 +155,7 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
+    min-width: 0;
   }
   .hero-right::before{
     content: "";
@@ -232,7 +237,7 @@
   @media (max-width: 520px){
     header{ padding: 20px 24px; flex-wrap: wrap; gap: 12px; }
     .hero-left, .hero-right{ padding: 44px 26px; }
-    .brand-logo{ width: clamp(220px, 62vw, 340px); }
+    .brand-logo{ width: clamp(280px, 92vw, 100%); }
     form.signup{ flex-direction: column; }
   }
 
