@@ -42,26 +42,9 @@
     z-index: 3;
   }
   .wordmark{
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .wordmark .name{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px;
-    letter-spacing: 1px;
-    line-height: 1;
-  }
-  .tape-swatch{
-    width: 30px;
-    height: 12px;
-    background:
-      linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.22) 8%, transparent 16%),
-      linear-gradient(118deg, #030303 0%, #050505 40%, #2e2e2e 48%, #0a0a0a 56%, #030303 100%);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.55), inset 0 1px 1px rgba(255,255,255,0.08);
-    border-radius: 1px;
-    transform: rotate(-6deg);
-    display: inline-block;
+    font-size: 22px;
+    letter-spacing: 1.5px;
   }
   .loc-chip{
     font-size: 12px;
@@ -89,19 +72,6 @@
     justify-content: center;
     position: relative;
   }
-  .tape-corner{
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    width: 70px;
-    height: 22px;
-    background:
-      linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 10%, transparent 20%, transparent 60%, rgba(255,255,255,0.12) 68%, transparent 78%),
-      linear-gradient(122deg, #030303 0%, #050505 38%, #333333 47%, #0a0a0a 56%, #030303 100%);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.08);
-    border-radius: 1px;
-    transform: rotate(-8deg);
-  }
   .eyebrow{
     font-size: 12px;
     font-weight: 600;
@@ -111,10 +81,13 @@
     margin: 0 0 18px;
   }
   h1.brand{
-    font-size: clamp(64px, 9vw, 110px);
-    line-height: 0.92;
-    margin: 0 0 6px;
-    letter-spacing: 0.5px;
+    margin: 0 0 10px;
+    line-height: 0;
+  }
+  .brand-logo{
+    display: block;
+    width: clamp(320px, 36vw, 520px);
+    height: auto;
   }
   .subline{
     font-size: 15px;
@@ -258,9 +231,8 @@
 
   @media (max-width: 520px){
     header{ padding: 20px 24px; flex-wrap: wrap; gap: 12px; }
-    .hero-left{ padding: 88px 26px 44px; }
-    .hero-right{ padding: 44px 26px; }
-    .tape-corner{ top: 30px; left: 26px; width: 50px; height: 16px; }
+    .hero-left, .hero-right{ padding: 44px 26px; }
+    .brand-logo{ width: clamp(220px, 62vw, 340px); }
     form.signup{ flex-direction: column; }
   }
 
@@ -295,18 +267,14 @@
 <body>
 
 <header>
-  <div class="wordmark">
-    <span class="tape-swatch"></span>
-    <span class="name">BY APPOINTMENT</span>
-  </div>
+  <div class="wordmark">BY APPOINTMENT</div>
   <div class="loc-chip">Whittier, CA</div>
 </header>
 
 <div class="hero">
   <div class="hero-left">
-    <div class="tape-corner"></div>
     <div class="eyebrow">Private Training Space</div>
-    <h1 class="brand">BY<br>APPOINTMENT</h1>
+    <h1 class="brand"><img src="tape-logo.png" alt="By Appointment" class="brand-logo"></h1>
     <span class="subline">— Private Training Space —</span>
 
     <div class="status-line">
