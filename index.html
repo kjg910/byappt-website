@@ -106,21 +106,23 @@
   }
   .status-line{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 0;
     margin-bottom: 30px;
+    width: 100%;
   }
   .status-dot{
-    width: 8px; height: 8px;
-    background: var(--iron);
-    border-radius: 50%;
+    display: none;
   }
   .status-text{
-    font-size: 13px;
+    font-size: clamp(18px, 2.8vw, 36px);
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--concrete);
+    color: var(--iron);
+    text-align: center;
   }
 
   .pillars{
