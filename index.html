@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>By Appointment — Private Training Space | Coming Soon</title>
+<meta name="description" content="By Appointment is a private, appointment-only training space in Whittier, CA. No crowds. No waiting. Just work. Opening soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --warm-white: #F4F1EC;
+    --concrete: #8A8A86;
+    --iron: #111111;
+    --tape: #0A0A0A;
+    --line: rgba(17,17,17,0.14);
+  }
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--warm-white);
+    color: var(--iron);
+    font-family: 'Oswald', Arial, sans-serif;
+    min-height: 100vh;
+  }
+  h1,h2,.headline-font{
+    font-family: 'Bebas Neue', 'Oswald', Arial, sans-serif;
+    font-weight: 400;
+  }
+
+  a{ color: inherit; }
+
+  /* ---------- Header ---------- */
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 48px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    z-index: 3;
+  }
+  .wordmark{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .wordmark .name{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+  .tape-swatch{
+    width: 30px;
+    height: 12px;
+    background:
+      linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.22) 8%, transparent 16%),
+      linear-gradient(118deg, #030303 0%, #050505 40%, #2e2e2e 48%, #0a0a0a 56%, #030303 100%);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.55), inset 0 1px 1px rgba(255,255,255,0.08);
+    border-radius: 1px;
+    transform: rotate(-6deg);
+    display: inline-block;
+  }
+  .loc-chip{
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid var(--iron);
+    padding: 7px 16px;
+  }
+
+  /* ---------- Hero split ---------- */
+  .hero{
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    min-height: calc(100vh - 90px);
+  }
+  @media (max-width: 900px){
+    .hero{ grid-template-columns: 1fr; min-height: auto; }
+  }
+
+  .hero-left{
+    padding: 64px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .tape-corner{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 70px;
+    height: 22px;
+    background:
+      linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 10%, transparent 20%, transparent 60%, rgba(255,255,255,0.12) 68%, transparent 78%),
+      linear-gradient(122deg, #030303 0%, #050505 38%, #333333 47%, #0a0a0a 56%, #030303 100%);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.08);
+    border-radius: 1px;
+    transform: rotate(-8deg);
+  }
+  .eyebrow{
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--concrete);
+    margin: 0 0 18px;
+  }
+  h1.brand{
+    font-size: clamp(64px, 9vw, 110px);
+    line-height: 0.92;
+    margin: 0 0 6px;
+    letter-spacing: 0.5px;
+  }
+  .subline{
+    font-size: 15px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--iron);
+    font-weight: 500;
+    margin: 0 0 34px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+    display: inline-block;
+  }
+  .status-line{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  .status-dot{
+    width: 8px; height: 8px;
+    background: var(--iron);
+    border-radius: 50%;
+  }
+  .status-text{
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--concrete);
+  }
+
+  .pillars{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px 30px;
+    margin-top: auto;
+    padding-top: 40px;
+  }
+  .pillar{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--iron);
+  }
+  .pillar svg{ width: 15px; height: 15px; flex-shrink: 0; }
+
+  /* ---------- Hero right (dark textured panel) ---------- */
+  .hero-right{
+    background:
+      radial-gradient(circle at 20% 15%, rgba(255,255,255,0.05), transparent 40%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 26px),
+      linear-gradient(160deg, #1c1c1c 0%, #0d0d0d 60%, #050505 100%);
+    color: var(--warm-white);
+    padding: 64px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                       linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at 60% 40%, black, transparent 75%);
+  }
+  .statement{
+    position: relative;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 5.2vw, 64px);
+    line-height: 1.02;
+    letter-spacing: 0.5px;
+    margin: 0 0 36px;
+  }
+  .statement .dim{ color: rgba(244,241,236,0.45); }
+
+  form.signup{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    max-width: 480px;
+    margin-bottom: 14px;
+  }
+  form.signup input[type="email"]{
+    flex: 1;
+    padding: 16px 18px;
+    border: 1px solid rgba(244,241,236,0.25);
+    background: rgba(255,255,255,0.04);
+    color: var(--warm-white);
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  form.signup input[type="email"]::placeholder{ color: rgba(244,241,236,0.4); }
+  form.signup input[type="email"]:focus{ border-color: var(--warm-white); }
+  form.signup button{
+    padding: 16px 26px;
+    border: none;
+    background: var(--warm-white);
+    color: var(--iron);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  form.signup button:hover{ opacity: 0.85; }
+  form.signup button:active{ transform: scale(0.97); }
+
+  .form-note{
+    position: relative;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(244,241,236,0.45);
+    text-transform: uppercase;
+  }
+  .success-msg{
+    position: relative;
+    display: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--warm-white);
+    border-left: 3px solid var(--warm-white);
+    padding-left: 12px;
+  }
+  .success-msg.show{ display: block; }
+
+  @media (max-width: 520px){
+    header{ padding: 20px 24px; flex-wrap: wrap; gap: 12px; }
+    .hero-left, .hero-right{ padding: 44px 26px; }
+    form.signup{ flex-direction: column; }
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 48px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--concrete);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .socials{ display: flex; gap: 22px; }
+  .socials a{
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--iron);
+    letter-spacing: 1px;
+  }
+  .socials a:hover{ color: var(--concrete); }
+
+  @media (max-width: 520px){
+    footer{ justify-content: center; text-align: center; padding: 20px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">
+    <span class="tape-swatch"></span>
+    <span class="name">BY APPOINTMENT</span>
+  </div>
+  <div class="loc-chip">Whittier, CA</div>
+</header>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="tape-corner"></div>
+    <div class="eyebrow">Private Training Space</div>
+    <h1 class="brand">BY<br>APPOINTMENT</h1>
+    <span class="subline">— Private Training Space —</span>
+
+    <div class="status-line">
+      <span class="status-dot"></span>
+      <span class="status-text">Opening Soon</span>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        By Appointment Only
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5l11 11M4 4l3 3M17 17l3 3M2 8l2-2M20 18l2-2M8 2l-2 2M18 20l-2 2"/></svg>
+        Serious Training
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        Member Focused
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        No Ego
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l4 3 5-7 5 7 4-3-2 11H5L3 8z"/></svg>
+        Built Different
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <h2 class="statement">
+      NO CROWDS.<br>
+      NO WAITING.<br>
+      <span class="dim">JUST WORK.</span>
+    </h2>
+
+    <div class="success-msg" id="successMsg">You're on the list — we'll be in touch before opening day.</div>
+
+    <form class="signup" id="signupForm">
+      <input type="email" id="emailInput" placeholder="Enter your email" required autocomplete="email">
+      <button type="submit">Inquire to Join</button>
+    </form>
+    <div class="form-note">Limited memberships. No spam, ever.</div>
+  </div>
+</div>
+
+<footer>
+  <div>&copy; <span id="year"></span> By Appointment — Whittier, CA</div>
+  <div class="socials">
+    <a href="#" aria-label="Instagram">Instagram</a>
+    <a href="mailto:hello@byappt.fitness">hello@byappt.fitness</a>
+    <a href="https://byappt.fitness">byappt.fitness</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const form = document.getElementById('signupForm');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    // Placeholder client-side handling — connect to your email
+    // provider (Mailchimp, ConvertKit, etc.) when ready to launch.
+    form.style.display = 'none';
+    document.querySelector('.form-note').style.display = 'none';
+    successMsg.classList.add('show');
+  });
+</script>
+
+</body>
+</html>
