@@ -53,13 +53,16 @@
     line-height: 1;
   }
   .tape-swatch{
-    width: 30px;
-    height: 12px;
+    width: 34px;
+    height: 14px;
     background:
-      linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.22) 8%, transparent 16%),
-      linear-gradient(118deg, #030303 0%, #050505 40%, #2e2e2e 48%, #0a0a0a 56%, #030303 100%);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.55), inset 0 1px 1px rgba(255,255,255,0.08);
-    border-radius: 1px;
+      radial-gradient(ellipse 40% 60% at 22% 25%, rgba(255,255,255,0.14), transparent 60%),
+      radial-gradient(ellipse 30% 50% at 78% 75%, rgba(255,255,255,0.10), transparent 65%),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 3px),
+      repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 3px),
+      linear-gradient(115deg, #030303 0%, #070707 28%, #2c2c2c 40%, #0a0a0a 52%, #050505 70%, #1e1e1e 84%, #030303 100%);
+    clip-path: polygon(0% 6%, 10% 0%, 22% 7%, 35% 1%, 48% 6%, 62% 0%, 76% 8%, 90% 2%, 100% 6%, 97% 18%, 100% 32%, 95% 48%, 100% 62%, 96% 78%, 100% 94%, 88% 100%, 74% 93%, 60% 100%, 46% 94%, 32% 100%, 18% 93%, 6% 100%, 0% 94%, 4% 80%, 0% 64%, 5% 50%, 0% 36%, 3% 20%);
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
     transform: rotate(-6deg);
     display: inline-block;
   }
@@ -93,13 +96,16 @@
     position: absolute;
     top: 40px;
     left: 40px;
-    width: 70px;
-    height: 22px;
+    width: 84px;
+    height: 28px;
     background:
-      linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 10%, transparent 20%, transparent 60%, rgba(255,255,255,0.12) 68%, transparent 78%),
-      linear-gradient(122deg, #030303 0%, #050505 38%, #333333 47%, #0a0a0a 56%, #030303 100%);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.08);
-    border-radius: 1px;
+      radial-gradient(ellipse 40% 60% at 20% 28%, rgba(255,255,255,0.16), transparent 60%),
+      radial-gradient(ellipse 32% 50% at 80% 72%, rgba(255,255,255,0.11), transparent 65%),
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 3px),
+      repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 3px),
+      linear-gradient(122deg, #030303 0%, #070707 26%, #333333 38%, #0a0a0a 50%, #050505 68%, #202020 82%, #030303 100%);
+    clip-path: polygon(0% 6%, 10% 0%, 22% 7%, 35% 1%, 48% 6%, 62% 0%, 76% 8%, 90% 2%, 100% 6%, 97% 18%, 100% 32%, 95% 48%, 100% 62%, 96% 78%, 100% 94%, 88% 100%, 74% 93%, 60% 100%, 46% 94%, 32% 100%, 18% 93%, 6% 100%, 0% 94%, 4% 80%, 0% 64%, 5% 50%, 0% 36%, 3% 20%);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
     transform: rotate(-8deg);
   }
   .eyebrow{
